@@ -45,6 +45,10 @@ const audioButton = document.querySelector('.card__play-btn')
                 audioButton.classList.remove('playing');
                 isAudioPlaying = false;
             })
+            affirmationAudioClip.addEventListener('ended', _ => {
+                audioButton.classList.remove('playing');
+                isAudioPlaying = false;
+            })
         })
 
 
