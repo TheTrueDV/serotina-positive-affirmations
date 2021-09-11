@@ -1,0 +1,79 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Lato&family=Salsa&display=swap');
+        p, p::before, p::after {
+            padding: 0;
+            margin: 0;
+        }
+        .card__intro::before {
+            content: open-quote;
+            display: block;
+            font-size: calc(4rem + 1vw);
+            height: 34px;
+            margin-bottom: 33px;
+        }
+        .card__intro {
+            position: relative;
+            font-size: calc(1rem + 1vw);
+        }
+        .card__author::before {
+            content: "- ";
+            display: inline;
+        }
+        .card__author {
+            margin-top: 23px;
+            font-size: calc(18px + 1vw);
+        }
+     
+        body {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            height:  100vh;
+            background: #FF8EAD;
+            margin: 0;
+            padding: 0;
+        }
+        .card {
+            margin-left: 1em;
+            margin-right: 1em;
+            background: #75206A;
+            color: #FFFFFC;
+            padding: 1.5em;
+            border-radius: 8px;
+            min-width: calc(305px - 48px - 32px);
+            max-width: calc(802px - 48px - 32px);
+            font-size: calc(1rem + 1vw);
+            
+            
+            
+        }
+
+        p {
+            font-family: 'Salsa', cursive;
+        }
+
+        .card__quote{
+            font-family: 'Lato', sans-serif;
+            
+            min-height: 92px;
+        }
+
+        .quote__footer {
+            display: grid;
+            grid-auto-flow: column;
+        }
+
+        .card__play-btn {
+            justify-self: end;
+        }
+
+        .btn {
+            background: none;
+            border: none;            
+        }
+
+        .fa-play-circle {
+            color: white;
+        }
+
+        
