@@ -66,6 +66,23 @@
         .card__play-btn {
             justify-self: end;
         }
+        
+        .card__play-btn .fa-play-circle {
+            display:block;
+        }
+        .card__play-btn .fa-stop-circle {
+            display:none;
+        }
+
+        .playing.card__play-btn .fa-play-circle {
+            display:none;
+        }
+        .playing.card__play-btn .fa-stop-circle {
+            display:block;
+        }
+        /* .playing.card__play-btn {
+            justify-self: end;            
+        } */
 
         .btn {
             background: none;
@@ -73,6 +90,9 @@
         }
 
         .fa-play-circle {
+            color: white;
+        }
+        .fa-stop-circle {
             color: white;
         }
 

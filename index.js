@@ -12,6 +12,10 @@ const audioButton = document.querySelector('.card__play-btn')
         let previousAffirmationID = parseInt(localStorage['lastAffirmationID']);;
         let affirmationAudio;
 
+        let isAudioPlaying = false;
+        let affirmationAudioClip;
+        
+
         function getAffirmationID(previousAffirmationID) {
             affirmationID = Math.floor(Math.random() * affirmations.length);
             // console.log(affirmationID);
@@ -31,11 +35,32 @@ const audioButton = document.querySelector('.card__play-btn')
             quoteAuthor.innerHTML = affirmation.quoteAuthor;
             quote.innerHTML = affirmation.quote;
             affirmationAudio = affirmation.quoteAudio;
+            affirmationAudioClip = new Audio(affirmationAudio);
+
+            affirmationAudioClip.addEventListener('play', _ => {
+                audioButton.classList.add('playing');
+                isAudioPlaying = true;
+            })
+            affirmationAudioClip.addEventListener('paused', _ => {
+                audioButton.classList.remove('playing');
+                isAudioPlaying = false;
+            })
         })
 
 
+
         audioButton.addEventListener('click', _ => {
-            var audio = new Audio(affirmationAudio);
-            audio.play();
+            
+            
+            // audio.play();
+            if(!affirmationAudioClip.paused) {
+                affirmationAudioClip.pause();
+                affirmationAudioClip.currentTime = 0;
+                audioButton.classList.remove('playing');
+            } else if(affirmationAudioClip.paused){
+                affirmationAudioClip.play();
+
+                audioButton.classList.add('playing');
+            }
         })
 
